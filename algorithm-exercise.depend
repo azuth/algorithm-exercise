@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1414588992 source:/home/azuth/Dokumente/Entwicklung/algorithm-exercise/src/main.cpp
+	<iostream>
+	<array>
+	<string>
+	"dataset/dataset.h"
+	"insertionsort/insertionsort.h"
+
+1414537439 /home/azuth/Dokumente/Entwicklung/algorithm-exercise/src/insetionsort/insertionsort.h
+	<iostream>
+	<array>
+
+1414536406 source:/home/azuth/Dokumente/Entwicklung/algorithm-exercise/src/insetionsort/insertionsort.cpp
+	<iostream>
+	<array>
+
+1414536406 source:/home/azuth/Dokumente/Entwicklung/algorithm-exercise/src/insertionsort/insertionsort.cpp
+	<iostream>
+	<array>
+
+1414538311 /home/azuth/Dokumente/Entwicklung/algorithm-exercise/src/insertionsort/insertionsort.h
+	<iostream>
+	<array>
+
+1414586868 source:/home/azuth/Dokumente/Entwicklung/algorithm-exercise/src/dataset/dataset.cpp
+
+1414588948 /home/azuth/Dokumente/Entwicklung/algorithm-exercise/src/dataset/dataset.h
+	<cstdlib>
+	<iostream>
+	<ctime>
+

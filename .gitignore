@@ -1,28 +1,8 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# build Folder
+/build
 
-# Precompiled Headers
-*.gch
-*.pch
+# gtest folder
+/gtest*
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+# Codeblockproject save files
+*.save
