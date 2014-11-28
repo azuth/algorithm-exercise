@@ -23,9 +23,9 @@ int main()
     Dataset::descArray(aDesc);
     Dataset::randArray(aRand);
 
-    Insertionsort::sortVersion1(aAsc);
-    Insertionsort::sortVersion1(aDesc);
-    Insertionsort::sortVersion1(aRand);
+    Insertionsort::normal(aAsc);
+    Insertionsort::normal(aDesc);
+    Insertionsort::normal(aRand);
 
 
     std::cout << "double asc" << std::endl;

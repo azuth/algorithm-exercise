@@ -1,8 +1,8 @@
-# build Folder
+# Code::Blocks  
+*.depend  
+*.layout  
+*.save
 /build
 
 # gtest folder
 /gtest*
-
-# Codeblockproject save files
-*.save

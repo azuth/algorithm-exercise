@@ -1,10 +1,9 @@
 #pragma once
-#include <iostream>
 #include <array>
 
 namespace Insertionsort{
     template <typename T, size_t SIZE>
-    void sortVersion1(std::array<T,SIZE> &a){
+    void normal(std::array<T,SIZE> &a){
         size_t i,j;
         for(i =0; i < SIZE; i++){
             j = i;

@@ -24,5 +24,4 @@ namespace Dataset{
             a[i] = (T)std::rand();
         }
     }
-
 }

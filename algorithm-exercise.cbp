@@ -29,16 +29,46 @@
 					<Add option="-s" />
 				</Linker>
 			</Target>
+			<Target title="test Debug">
+				<Option output="build/bin/test_Debug/algorithm-exercise" prefix_auto="1" extension_auto="1" />
+				<Option object_output="build/obj/test_Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
+			<Target title="test Release">
+				<Option output="build/bin/test_Release/algorithm-exercise" prefix_auto="1" extension_auto="1" />
+				<Option object_output="build/obj/test_Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+			</Target>
 		</Build>
 		<Compiler>
+			<Add option="-O3" />
+			<Add option="-std=c++11" />
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-lgtest" />
+			<Add directory="gtest/include" />
 		</Compiler>
-		<Unit filename="src/dataset/dataset.cpp" />
+		<Linker>
+			<Add option="-pthread" />
+			<Add library="gtest/lib/.libs/libgtest.a" />
+			<Add library="gtest/lib/.libs/libgtest_main.a" />
+		</Linker>
 		<Unit filename="src/dataset/dataset.h" />
-		<Unit filename="src/insertionsort/insertionsort.cpp" />
+		<Unit filename="src/insertionsort/Insertionsort_normal_tests.cc">
+			<Option target="test Debug" />
+			<Option target="test Release" />
+		</Unit>
 		<Unit filename="src/insertionsort/insertionsort.h" />
-		<Unit filename="src/main.cpp" />
+		<Unit filename="src/main.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="src/testUtils.cc">
+			<Option target="test Debug" />
+			<Option target="test Release" />
+		</Unit>
 		<Extensions>
 			<code_completion />
 			<debugger />
