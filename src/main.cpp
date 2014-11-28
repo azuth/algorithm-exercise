@@ -5,7 +5,6 @@
 #include "insertionsort/insertionsort.h"
 
 
-
 template <typename T, size_t SIZE>
 void printArray(std::array<T,SIZE> &a){
     for(size_t i = 0; i < SIZE; i++ ){
@@ -19,43 +18,27 @@ void printArray(std::array<T,SIZE> &a){
 int main()
 {
     const size_t l = 1000;
-    std::array<int ,l> ai1,ai2,ai3;
-    Dataset::generateArrays(ai1,ai2,ai3);
+    std::array<double ,l> aAsc,aDesc,aRand;
+    Dataset::ascArray(aAsc);
+    Dataset::descArray(aDesc);
+    Dataset::randArray(aRand);
 
-    std::array<double, l> ad1,ad2,ad3;
-    Dataset::generateArrays(ad1,ad2,ad3);
+    Insertionsort::sortVersion1(aAsc);
+    Insertionsort::sortVersion1(aDesc);
+    Insertionsort::sortVersion1(aRand);
 
-    std::array<std::string ,3> e = {"blah","foo","bar"};
-
-    Insertionsort::sortVersion1(ai1);
-    Insertionsort::sortVersion1(ai1);
-    Insertionsort::sortVersion1(ai1);
-    Insertionsort::sortVersion1(ad1);
-    Insertionsort::sortVersion1(ad2);
-    Insertionsort::sortVersion1(ad3);
-    Insertionsort::sortVersion1(e);
-
-    std::cout << "asc" << std::endl;
-    printArray(ai1);
-
-
-    std::cout << "desc" << std::endl;
-    printArray(ai2);
-
-    std::cout << "rand" << std::endl;
-    printArray(ai3);
 
     std::cout << "double asc" << std::endl;
-    printArray(ad1);
+    printArray(aAsc);
 
     std::cout << "double desc" << std::endl;
-    printArray(ad2);
+    printArray(aDesc);
 
     std::cout << "double rand" << std::endl;
-    printArray(ad3);
+    printArray(aRand);
 
-    std::cout << "string" << std::endl;
-    printArray(e);
+
 
     return 0;
 }
+
