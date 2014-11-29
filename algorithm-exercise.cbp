@@ -60,7 +60,16 @@
 			<Option target="test Debug" />
 			<Option target="test Release" />
 		</Unit>
+		<Unit filename="src/insertionsort/Insertionsort_withGuardAndEarlyDecrement_tests.cc">
+			<Option target="test Debug" />
+			<Option target="test Release" />
+		</Unit>
+		<Unit filename="src/insertionsort/Insertionsort_withGuard_tests.cc">
+			<Option target="test Debug" />
+			<Option target="test Release" />
+		</Unit>
 		<Unit filename="src/insertionsort/insertionsort.h" />
+		<Unit filename="src/insertionsort/insertionsort_alternative.h" />
 		<Unit filename="src/main.cpp">
 			<Option target="Release" />
 			<Option target="Debug" />

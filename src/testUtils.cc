@@ -1,6 +1,6 @@
 #include <gtest/gtest.h>
 
-const size_t arraySize = 101;
+const size_t arraySize = 10000;
 
 template <typename T, size_t SIZE>
 void isSortet(std::array<T,SIZE> &a){
