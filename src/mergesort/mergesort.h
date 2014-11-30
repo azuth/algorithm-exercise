@@ -54,4 +54,46 @@ namespace Mergesort{
     }
 
 
+
+    template <typename T, size_t SIZE>
+    void natural(std::array<T,SIZE> &a){
+        std::array<T,SIZE>  temp;
+
+        size_t left = 0;
+        size_t end = SIZE-1;
+
+
+        size_t mid = left;
+        size_t l = left;
+        size_t r =mid+1;
+        bool unsorted = true;
+
+        while(unsorted){
+            mid = l;
+
+            while(mid < end && a[mid] <= a[mid+1]){
+                mid++;
+            }
+
+
+            r = mid+1;
+            while(r < end && a[r] <= a[r+1]){
+                r++;
+            }
+
+            if(l == 0 && mid >= end){
+                unsorted = false;
+
+            }else{
+                merge(a,temp, l, mid+1 , r+1);
+                l = r+1;
+
+                if(l >= end){
+                    l = 0;
+                }
+            }
+        }
+    }
+
+
 }
