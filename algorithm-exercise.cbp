@@ -74,6 +74,11 @@
 			<Option target="Release" />
 			<Option target="Debug" />
 		</Unit>
+		<Unit filename="src/mergesort/mergesort.h" />
+		<Unit filename="src/mergesort/mergsort_bottomUp_tests.cc">
+			<Option target="test Debug" />
+			<Option target="test Release" />
+		</Unit>
 		<Unit filename="src/testUtils.cc">
 			<Option target="test Debug" />
 			<Option target="test Release" />
