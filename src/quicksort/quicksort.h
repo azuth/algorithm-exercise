@@ -53,4 +53,45 @@ namespace Quicksort{
 
 
 
+    template <typename T, size_t SIZE>
+    void withShiftoperatorSort(std::array<T,SIZE> &a, size_t leftBound, size_t rightBound){
+        size_t left = leftBound;
+        size_t right = rightBound;
+        T pivot = a[(leftBound+rightBound)>>1];
+
+        while(left <= right){
+            while( a[left] < pivot )
+                ++left;
+            while( pivot < a[right] ){
+                --right;
+            }
+
+            if( left <= right ){
+                std::swap(a[left] , a[right]);
+
+                ++left;
+                if(right  > 0){
+                    --right;
+                }
+            }
+        }
+
+        if(leftBound < right){
+            normalSort(a,leftBound,right);
+        }
+
+        if(left < rightBound){
+            normalSort(a,left,rightBound);
+        }
+    }
+
+    template <typename T, size_t SIZE>
+    void withShiftoperator(std::array<T,SIZE> &a){
+        if (SIZE <= 1){
+            return;
+        }
+        withShiftoperatorSort(a, 0, SIZE-1);
+    }
+
+
 }
