@@ -1,15 +1,7 @@
 #pragma once
-#include <iostream>
 #include <array>
 
 namespace Mergesort{
-    template <typename T, size_t SIZE>
-    void printA(std::array<T,SIZE> &a){
-        for(size_t i = 0 ; i < SIZE ; i++){
-            std::cout << a[i];
-        }
-        std::cout << std::endl;
-    }
 
     template <typename T, size_t SIZE>
     void merge(std::array<T,SIZE> &a, std::array<T,SIZE> &temp , size_t left , size_t middle , size_t end){
@@ -62,37 +54,38 @@ namespace Mergesort{
         size_t left = 0;
         size_t end = SIZE-1;
 
-
-        size_t mid = left;
         size_t l = left;
-        size_t r =mid+1;
+        size_t mid = left;
+        size_t r = mid+1;
         bool unsorted = true;
 
         while(unsorted){
             mid = l;
-
-            while(mid < end && a[mid] <= a[mid+1]){
+            while(mid < end && a[mid] <= a[mid+1])
                 mid++;
-            }
 
 
-            r = mid+1;
-            while(r < end && a[r] <= a[r+1]){
+            r = mid +1;
+            while(r < end && a[r] <= a[r+1])
                 r++;
-            }
 
-            if(l == 0 && mid >= end){
+
+            if( l== 0 && mid+1 > end ){
                 unsorted = false;
-
             }else{
-                merge(a,temp, l, mid+1 , r+1);
-                l = r+1;
-
-                if(l >= end){
-                    l = 0;
+                mid = std::min( mid+1,SIZE);
+                r = std::min( r+1,SIZE);
+                if(mid<r){     // mid >= r -> nothing to merge
+                    merge(a,temp, l, mid , r); // to use the merge  mid+1 and r+1
                 }
+                l = r;
+
+                if(l >= end)
+                    l = 0;
             }
         }
+
+
     }
 
 
