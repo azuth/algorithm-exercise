@@ -63,6 +63,11 @@
 			<Add library="gtest/lib/.libs/libgtest_main.a" />
 		</Linker>
 		<Unit filename="src/dataset/dataset.h" />
+		<Unit filename="src/heapsort/heapsort.h" />
+		<Unit filename="src/heapsort/heapsort_normal_tests.cc">
+			<Option target="test Debug" />
+			<Option target="test Release" />
+		</Unit>
 		<Unit filename="src/insertionsort/Insertionsort_normal_tests.cc">
 			<Option target="test Debug" />
 			<Option target="test Release" />
