@@ -1,5 +1,6 @@
 #pragma once
 #include <array>
+#include <memory>
 
 namespace Mergesort{
 
@@ -37,10 +38,10 @@ namespace Mergesort{
 
     template <typename T, size_t SIZE>
     void bottomUp(std::array<T,SIZE> &a){
-        std::array<T,SIZE>  temp;
+        auto temp = std::make_shared<std::array<T,SIZE>>(); // std::array<T,SIZE>  temp;
         for(size_t width = 1 ; width < SIZE ; width = width << 1){
             for(size_t left = 0 ; left < SIZE ; left += width << 1){
-                merge(a,temp, left, std::min(left+width,SIZE) , std::min(left+(width << 1),SIZE));
+                merge(a,*temp.get(), left, std::min(left+width,SIZE) , std::min(left+(width << 1),SIZE));
             }
         }
     }
@@ -49,7 +50,7 @@ namespace Mergesort{
 
     template <typename T, size_t SIZE>
     void natural(std::array<T,SIZE> &a){
-        std::array<T,SIZE>  temp;
+        auto temp = std::make_shared<std::array<T,SIZE>>(); // std::array<T,SIZE>  temp;
 
         size_t left = 0;
         size_t end = SIZE-1;
@@ -76,7 +77,7 @@ namespace Mergesort{
                 mid = std::min( mid+1,SIZE);
                 r = std::min( r+1,SIZE);
                 if(mid<r){     // mid >= r -> nothing to merge
-                    merge(a,temp, l, mid , r); // to use the merge  mid+1 and r+1
+                    merge(a,*temp.get(), l, mid , r); // to use the merge  mid+1 and r+1
                 }
                 l = r;
 
@@ -84,9 +85,6 @@ namespace Mergesort{
                     l = 0;
             }
         }
-
-
     }
-
 
 }
