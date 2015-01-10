@@ -62,6 +62,10 @@
 			<Add library="gtest/lib/.libs/libgtest.a" />
 			<Add library="gtest/lib/.libs/libgtest_main.a" />
 		</Linker>
+		<Unit filename="src/benchmark/benchmark.h">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
 		<Unit filename="src/dataset/dataset.h" />
 		<Unit filename="src/heapsort/heapsort.h" />
 		<Unit filename="src/heapsort/heapsort_normal_tests.cc">
@@ -69,19 +73,18 @@
 			<Option target="test Release" />
 		</Unit>
 		<Unit filename="src/insertionsort/Insertionsort_normal_tests.cc">
-			<Option target="test Debug" />
 			<Option target="test Release" />
+			<Option target="test Debug" />
 		</Unit>
 		<Unit filename="src/insertionsort/Insertionsort_withGuardAndEarlyDecrement_tests.cc">
-			<Option target="test Debug" />
 			<Option target="test Release" />
+			<Option target="test Debug" />
 		</Unit>
 		<Unit filename="src/insertionsort/Insertionsort_withGuard_tests.cc">
-			<Option target="test Debug" />
 			<Option target="test Release" />
+			<Option target="test Debug" />
 		</Unit>
 		<Unit filename="src/insertionsort/insertionsort.h" />
-		<Unit filename="src/insertionsort/insertionsort_alternative.h" />
 		<Unit filename="src/main.cpp">
 			<Option target="Release" />
 			<Option target="Debug" />
