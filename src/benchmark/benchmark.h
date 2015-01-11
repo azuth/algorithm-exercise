@@ -63,7 +63,7 @@ namespace Benchmark{
         Dataset::randArray(*aRand);
 
         std::vector<
-            std::pair<std::array<T ,S>,benchmarkdata& >>arrays;
+            std::pair<std::array<T ,S>&,benchmarkdata& >>arrays;
         arrays = {  {*aAsc,data.asc},
                     {*aDesc,data.desc},
                     {*aRand,data.rand}
@@ -125,7 +125,7 @@ namespace Benchmark{
     }
 
     void benchmark(){
-        const size_t iterations = 6;
+        const size_t iterations = 9;
         benchmarkdataset data;
         benchmarkIterator<double,iterations>(data);
         makeCVS(data,iterations);
