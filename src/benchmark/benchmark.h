@@ -14,14 +14,14 @@
 #include "../heapsort/heapsort.h"
 
 namespace Benchmark{
-    typedef std::map<std::string, std::vector<std::chrono::microseconds>> benchmarkdata;
+    typedef std::map<std::string, std::vector<std::chrono::milliseconds>> benchmarkdata;//microseconds
 
     struct benchmarkdataset{
             benchmarkdata asc,desc,rand;
     };
 
     template <typename T, size_t S>
-    std::chrono::microseconds stoptime(std::function<void(std::array<T,S>&)> f, std::array<T,S> &a)
+    std::chrono::milliseconds stoptime(std::function<void(std::array<T,S>&)> f, std::array<T,S> &a)
     {
         std::chrono::time_point<std::chrono::system_clock> start, end;
 
@@ -31,7 +31,7 @@ namespace Benchmark{
         f(a);
         end = std::chrono::system_clock::now();
 
-        return std::chrono::duration_cast<std::chrono::microseconds>(end-start); // nanoseconds
+        return std::chrono::duration_cast<std::chrono::milliseconds>(end-start); // nanoseconds
     }
 
 
@@ -54,16 +54,19 @@ namespace Benchmark{
                 {"Heapsort",Heapsort::normal<T,S>}
         };
 
-        std::array<T ,S> aAsc,aDesc,aRand;
-        Dataset::ascArray(aAsc);
-        Dataset::descArray(aDesc);
-        Dataset::randArray(aRand);
+        //std::array<T ,S> aAsc,aDesc,aRand;
+        auto aAsc = new std::array<T, S>;
+        Dataset::ascArray(*aAsc);
+        auto aDesc = new std::array<T, S>;
+        Dataset::descArray(*aDesc);
+        auto aRand = new std::array<T, S>;
+        Dataset::randArray(*aRand);
 
         std::vector<
             std::pair<std::array<T ,S>,benchmarkdata& >>arrays;
-        arrays = {  {aAsc,data.asc},
-                    {aDesc,data.desc},
-                    {aRand,data.rand}
+        arrays = {  {*aAsc,data.asc},
+                    {*aDesc,data.desc},
+                    {*aRand,data.rand}
         };
 
         std::cout << "Array Size: " << S << std::endl;
@@ -78,7 +81,9 @@ namespace Benchmark{
             }
         }
         std::cout << "-----------------------" << std::endl;
-
+        delete aAsc;
+        delete aDesc;
+        delete aRand;
     }
 
     template<>
@@ -120,7 +125,7 @@ namespace Benchmark{
     }
 
     void benchmark(){
-        const size_t iterations = 4;
+        const size_t iterations = 6;
         benchmarkdataset data;
         benchmarkIterator<double,iterations>(data);
         makeCVS(data,iterations);
