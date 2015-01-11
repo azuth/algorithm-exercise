@@ -50,6 +50,7 @@ namespace Benchmark{
                 {"Mergesort Natural",Mergesort::natural<T,S>},
                 {"Quicksort",Quicksort::normal<T,S>},
                 {"Quicksort with Shiftoperator",Quicksort::withShiftoperator<T,S>},
+                {"Quicksort three way partitioning",Quicksort::threeWayPartitioning<T,S>},
                 {"Heapsort",Heapsort::normal<T,S>}
         };
 
