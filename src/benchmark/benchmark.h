@@ -89,7 +89,7 @@ namespace Benchmark{
     void writeDataToCVS(std::ostream& stream,benchmarkdata data,size_t iterations){
         stream  << "Array Size";
         for(size_t i = 1; i <= iterations ; i++ ){
-            stream << "," << i* 10000;
+            stream << "," << (10000 << i-1);
         }
         stream  << std::endl;
 
