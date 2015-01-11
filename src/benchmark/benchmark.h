@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <fstream>
 #include <array>
 #include <string>
 #include <map>
@@ -13,7 +14,7 @@
 #include "../heapsort/heapsort.h"
 
 namespace Benchmark{
-    typedef std::vector<std::pair<std::string, std::vector<std::chrono::microseconds>>> benchmarkdata;
+    typedef std::map<std::string, std::vector<std::chrono::microseconds>> benchmarkdata;
 
     struct benchmarkdataset{
             benchmarkdata asc,desc,rand;
@@ -31,17 +32,6 @@ namespace Benchmark{
         end = std::chrono::system_clock::now();
 
         return std::chrono::duration_cast<std::chrono::microseconds>(end-start); // nanoseconds
-
-
-        /*
-        int elapsed_seconds = std::chrono::duration_cast<std::chrono::seconds>
-                                 (end-start).count();
-
-        std::time_t end_time = std::chrono::system_clock::to_time_t(end);
-
-        std::cout << "finished computation at " << std::ctime(&end_time)
-                  << "elapsed time: " << elapsed_seconds << "s\n";*/
-
     }
 
 
@@ -59,7 +49,8 @@ namespace Benchmark{
                 {"Mergesort Bottom-Up",Mergesort::bottomUp<T,S>},
                 {"Mergesort Natural",Mergesort::natural<T,S>},
                 {"Quicksort",Quicksort::normal<T,S>},
-                {"Quicksort with Shiftoperator",Quicksort::withShiftoperator<T,S> }
+                {"Quicksort with Shiftoperator",Quicksort::withShiftoperator<T,S>},
+                {"Heapsort",Heapsort::normal<T,S>}
         };
 
         std::array<T ,S> aAsc,aDesc,aRand;
@@ -80,13 +71,8 @@ namespace Benchmark{
             for(auto sf : sfv){
                 auto cp = new std::array<T, S>(arr.first);
                 auto time = stoptime(sf.second,*cp);
-                //std::cout << "    " << sf.first  << "-" << time.count() << std::endl;
-                for(auto &a : arr.second){
-
-                    if(a.first==sf.first){
-                        a.second.push_back(time);
-                    }
-                }
+                std::cout << "    " << sf.first  << ": " << time.count() << std::endl;
+                arr.second[sf.first].push_back(time);
                 delete cp;
             }
         }
@@ -99,52 +85,44 @@ namespace Benchmark{
 
     }
 
-    void writeCVS(benchmarkdata data){
+    void writeDataToCVS(std::ostream& stream,benchmarkdata data,size_t iterations){
+        stream  << "Array Size";
+        for(size_t i = 1; i <= iterations ; i++ ){
+            stream << "," << i* 10000;
+        }
+        stream  << std::endl;
+
         for(auto v :  data){
-            std::cout  << v.first;
+            stream  << v.first;
             for(auto time :  v.second){
-                std::cout << "," << time.count();
+                stream << "," << time.count();
             }
-            std::cout  << std::endl;
+            stream  << std::endl;
         }
     }
 
+    void makeCVS(benchmarkdataset data,size_t iterations){
+        std::ofstream asc("asc.csv");
+        asc << "Ascending" << std::endl;
+        writeDataToCVS(asc,data.asc,iterations);
+        asc.close();
+
+        std::ofstream desc ("desc.csv");
+        desc << "Descending"<< std::endl;
+        writeDataToCVS(desc,data.desc,iterations);
+        desc.close();
+
+        std::ofstream rand ("rand.csv");
+        rand << "Random"<< std::endl;
+        writeDataToCVS(rand,data.rand,iterations);
+        rand.close();
+    }
+
     void benchmark(){
-        const size_t iterations = 2;
-
+        const size_t iterations = 4;
         benchmarkdataset data;
-        data.asc = {
-                {"Insertionsort",std::vector<std::chrono::microseconds>()},
-                {"Insertionsort with Guard",std::vector<std::chrono::microseconds>()},
-                {"Insertionsort with Guard And Early Decrement",std::vector<std::chrono::microseconds>()},
-                {"Mergesort Bottom-Up",std::vector<std::chrono::microseconds>()},
-                {"Mergesort Natural",std::vector<std::chrono::microseconds>()},
-                {"Quicksort",std::vector<std::chrono::microseconds>()},
-                {"Quicksort with Shiftoperator",std::vector<std::chrono::microseconds>() }
-        };
-
-        data.desc = {
-                {"Insertionsort",std::vector<std::chrono::microseconds>()},
-                {"Insertionsort with Guard",std::vector<std::chrono::microseconds>()},
-                {"Insertionsort with Guard And Early Decrement",std::vector<std::chrono::microseconds>()},
-                {"Mergesort Bottom-Up",std::vector<std::chrono::microseconds>()},
-                {"Mergesort Natural",std::vector<std::chrono::microseconds>()},
-                {"Quicksort",std::vector<std::chrono::microseconds>()},
-                {"Quicksort with Shiftoperator",std::vector<std::chrono::microseconds>() }
-        };
-        data.rand = {
-                {"Insertionsort",std::vector<std::chrono::microseconds>()},
-                {"Insertionsort with Guard",std::vector<std::chrono::microseconds>()},
-                {"Insertionsort with Guard And Early Decrement",std::vector<std::chrono::microseconds>()},
-                {"Mergesort Bottom-Up",std::vector<std::chrono::microseconds>()},
-                {"Mergesort Natural",std::vector<std::chrono::microseconds>()},
-                {"Quicksort",std::vector<std::chrono::microseconds>()},
-                {"Quicksort with Shiftoperator",std::vector<std::chrono::microseconds>() }
-        };
         benchmarkIterator<double,iterations>(data);
-        writeCVS(data.asc);
-        writeCVS(data.desc);
-        writeCVS(data.rand);
+        makeCVS(data,iterations);
     }
 
 }
