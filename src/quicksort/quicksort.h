@@ -13,34 +13,40 @@ namespace Quicksort{
 
     template <typename T, size_t SIZE>
     void normalSort(std::array<T,SIZE> &a, size_t leftBound, size_t rightBound){
+        if(rightBound <= leftBound){
+            return;
+        }
+
         size_t left = leftBound;
         size_t right = rightBound;
-        T pivot = a[(leftBound+rightBound)/2];
 
-        while(left <= right){
-            while( a[left] < pivot )
+        size_t middle = (leftBound+rightBound)/2;
+        T pivot = a[middle];
+        std::swap(a[middle] , a[rightBound]);
+
+        while(true){
+            while( a[left] < pivot ){
                 ++left;
-            while( pivot < a[right] ){
-                --right;
             }
 
-            if( left <= right ){
-                std::swap(a[left] , a[right]);
-
-                ++left;
-                if(right  > 0){
-                    --right;
+            while( pivot < a[--right] ){
+                if(right == leftBound){
+                    break;
                 }
             }
+
+            if( left >= right ){
+                break;
+            }
+            std::swap(a[left] , a[right]);
+        }
+        std::swap(a[left] , a[rightBound]);
+
+        if(left != 0){
+            normalSort(a,leftBound,left-1);
         }
 
-        if(leftBound < right){
-            normalSort(a,leftBound,right);
-        }
-
-        if(left < rightBound){
-            normalSort(a,left,rightBound);
-        }
+        normalSort(a,left+1,rightBound);
     }
 
     template <typename T, size_t SIZE>
@@ -54,34 +60,40 @@ namespace Quicksort{
 
     template <typename T, size_t SIZE>
     void withShiftoperatorSort(std::array<T,SIZE> &a, size_t leftBound, size_t rightBound){
+        if(rightBound <= leftBound){
+            return;
+        }
+
         size_t left = leftBound;
         size_t right = rightBound;
-        T pivot = a[(leftBound+rightBound)>>1];
 
-        while(left <= right){
-            while( a[left] < pivot )
+        size_t middle = (leftBound+rightBound)>>1;
+        T pivot = a[middle];
+        std::swap(a[middle] , a[rightBound]);
+
+        while(true){
+            while( a[left] < pivot ){
                 ++left;
-            while( pivot < a[right] ){
-                --right;
             }
 
-            if( left <= right ){
-                std::swap(a[left] , a[right]);
-
-                ++left;
-                if(right  > 0){
-                    --right;
+            while( pivot < a[--right] ){
+                if(right == leftBound){
+                    break;
                 }
             }
+
+            if( left >= right ){
+                break;
+            }
+            std::swap(a[left] , a[right]);
+        }
+        std::swap(a[left] , a[rightBound]);
+
+        if(left != 0){
+            normalSort(a,leftBound,left-1);
         }
 
-        if(leftBound < right){
-            normalSort(a,leftBound,right);
-        }
-
-        if(left < rightBound){
-            normalSort(a,left,rightBound);
-        }
+        normalSort(a,left+1,rightBound);
     }
 
     template <typename T, size_t SIZE>
