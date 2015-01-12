@@ -1,57 +1,57 @@
 #include <gtest/gtest.h>
 #include <string>
-#include "heapsort.h"
+#include "insertionsort.h"
 #include "../dataset/dataset.h"
-#include "../testUtils.cc"
+#include "../testUtils.h"
 
 
-namespace Heapsort{
+namespace Insertionsort{
 
-    TEST(Heapsort_normal, AscInt)
+    TEST(Insertionsort_withGuard, AscInt)
     {
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
-        normal(a);
+        withGuard(a);
         isSortet(a);
     }
 
-    TEST(Heapsort_normal, DescInt)
+    TEST(Insertionsort_withGuard, DescInt)
     {
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
-        normal(a);
+        withGuard(a);
         isSortet(a);
     }
 
-    TEST(Heapsort_normal, RandomInt)
+    TEST(Insertionsort_withGuard, RandomInt)
     {
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
-        normal(a);
+        withGuard(a);
         isSortet(a);
     }
 
-    TEST(Heapsort_normal, AscDouble)
+    TEST(Insertionsort_withGuard, AscDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
-        normal(a);
+        withGuard(a);
         isSortet(a);
     }
 
-    TEST(Heapsort_normal, DescDouble)
+    TEST(Insertionsort_withGuard, DescDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
-        normal(a);
+        withGuard(a);
         isSortet(a);
     }
 
-    TEST(Heapsort_normal, RandomDouble)
+    TEST(Insertionsort_withGuard, RandomDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
-        normal(a);
+        withGuard(a);
         isSortet(a);
     }
 }

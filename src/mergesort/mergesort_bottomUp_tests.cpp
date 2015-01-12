@@ -1,58 +1,57 @@
 #include <gtest/gtest.h>
 #include <string>
-#include "quicksort.h"
+#include "mergesort.h"
 #include "../dataset/dataset.h"
-#include "../testUtils.cc"
+#include "../testUtils.h"
 
 
-namespace Quicksort{
+namespace Mergesort{
 
-    TEST(Quicksort_normal, AscInt)
+    TEST(Mergesort_buttomUp, AscInt)
     {
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
-        normal(a);
+        bottomUp(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_normal, DescInt)
+    TEST(Mergesort_buttomUp, DescInt)
     {
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
-        normal(a);
+        bottomUp(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_normal, RandomInt)
+    TEST(Mergesort_buttomUp, RandomInt)
     {
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
-        normal(a);
+        bottomUp(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_normal, AscDouble)
+    TEST(Mergesort_buttomUp, AscDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
-        normal(a);
+        bottomUp(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_normal, DescDouble)
+    TEST(Mergesort_buttomUp, DescDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
-        normal(a);
+        bottomUp(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_normal, RandomDouble)
+    TEST(Mergesort_buttomUp, RandomDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
-        normal(a);
+        bottomUp(a);
         isSortet(a);
     }
-
 }

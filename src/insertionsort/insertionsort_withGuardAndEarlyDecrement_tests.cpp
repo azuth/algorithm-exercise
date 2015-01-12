@@ -1,57 +1,57 @@
 #include <gtest/gtest.h>
 #include <string>
-#include "quicksort.h"
+#include "insertionsort.h"
 #include "../dataset/dataset.h"
-#include "../testUtils.cc"
+#include "../testUtils.h"
 
 
-namespace Quicksort{
+namespace Insertionsort{
 
-    TEST(Quicksort_threeWayPartitioning, AscInt)
+    TEST(Insertionsort_withGuardAndEarlyDecrement, AscInt)
     {
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
-        threeWayPartitioning(a);
+        withGuardAndEarlyDecrement(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_threeWayPartitioning, DescInt)
+    TEST(Insertionsort_withGuardAndEarlyDecrement, DescInt)
     {
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
-        threeWayPartitioning(a);
+        withGuardAndEarlyDecrement(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_threeWayPartitioning, RandomInt)
+    TEST(Insertionsort_withGuardAndEarlyDecrement, RandomInt)
     {
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
-        threeWayPartitioning(a);
+        withGuardAndEarlyDecrement(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_threeWayPartitioning, AscDouble)
+    TEST(Insertionsort_withGuardAndEarlyDecrement, AscDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
-        threeWayPartitioning(a);
+        withGuardAndEarlyDecrement(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_threeWayPartitioning, DescDouble)
+    TEST(Insertionsort_withGuardAndEarlyDecrement, DescDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
-        threeWayPartitioning(a);
+        withGuardAndEarlyDecrement(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_threeWayPartitioning, RandomDouble)
+    TEST(Insertionsort_withGuardAndEarlyDecrement, RandomDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
-        threeWayPartitioning(a);
+        withGuardAndEarlyDecrement(a);
         isSortet(a);
     }
 }

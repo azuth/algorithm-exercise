@@ -1,57 +1,57 @@
 #include <gtest/gtest.h>
 #include <string>
-#include "insertionsort.h"
+#include "mergesort.h"
 #include "../dataset/dataset.h"
-#include "../testUtils.cc"
+#include "../testUtils.h"
 
 
-namespace Insertionsort{
+namespace Mergesort{
 
-    TEST(Insertionsort_withGuard, AscInt)
+    TEST(Mergesort_natural, AscInt)
     {
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
-        withGuard(a);
+        natural(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_withGuard, DescInt)
+    TEST(Mergesort_natural, DescInt)
     {
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
-        withGuard(a);
+        natural(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_withGuard, RandomInt)
+    TEST(Mergesort_natural, RandomInt)
     {
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
-        withGuard(a);
+        natural(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_withGuard, AscDouble)
+    TEST(Mergesort_natural, AscDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
-        withGuard(a);
+        natural(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_withGuard, DescDouble)
+    TEST(Mergesort_natural, DescDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
-        withGuard(a);
+        natural(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_withGuard, RandomDouble)
+    TEST(Mergesort_natural, RandomDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
-        withGuard(a);
+        natural(a);
         isSortet(a);
     }
 }

@@ -1,57 +1,57 @@
 #include <gtest/gtest.h>
 #include <string>
-#include "insertionsort.h"
+#include "quicksort.h"
 #include "../dataset/dataset.h"
-#include "../testUtils.cc"
+#include "../testUtils.h"
 
 
-namespace Insertionsort{
+namespace Quicksort{
 
-    TEST(Insertionsort_normal, AscInt)
+    TEST(Quicksort_threeWayPartitioning, AscInt)
     {
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
-        normal(a);
+        threeWayPartitioning(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_normal, DescInt)
+    TEST(Quicksort_threeWayPartitioning, DescInt)
     {
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
-        normal(a);
+        threeWayPartitioning(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_normal, RandomInt)
+    TEST(Quicksort_threeWayPartitioning, RandomInt)
     {
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
-        normal(a);
+        threeWayPartitioning(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_normal, AscDouble)
+    TEST(Quicksort_threeWayPartitioning, AscDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
-        normal(a);
+        threeWayPartitioning(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_normal, DescDouble)
+    TEST(Quicksort_threeWayPartitioning, DescDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
-        normal(a);
+        threeWayPartitioning(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_normal, RandomDouble)
+    TEST(Quicksort_threeWayPartitioning, RandomDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
-        normal(a);
+        threeWayPartitioning(a);
         isSortet(a);
     }
 }

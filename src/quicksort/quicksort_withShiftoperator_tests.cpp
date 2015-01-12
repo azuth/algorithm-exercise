@@ -1,57 +1,58 @@
 #include <gtest/gtest.h>
 #include <string>
-#include "insertionsort.h"
+#include "quicksort.h"
 #include "../dataset/dataset.h"
-#include "../testUtils.cc"
+#include "../testUtils.h"
 
 
-namespace Insertionsort{
+namespace Quicksort{
 
-    TEST(Insertionsort_sortBound, AscInt)
+    TEST(Quicksort_withShiftoperator, AscInt)
     {
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
-        sortBound(a,0,arraySize-1);
+        withShiftoperator(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_sortBound, DescInt)
+    TEST(Quicksort_withShiftoperator, DescInt)
     {
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
-        sortBound(a,0,arraySize-1);
+        withShiftoperator(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_sortBound, RandomInt)
+    TEST(Quicksort_withShiftoperator, RandomInt)
     {
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
-        sortBound(a,0,arraySize-1);
+        withShiftoperator(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_sortBound, AscDouble)
+    TEST(Quicksort_withShiftoperator, AscDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
-        sortBound(a,0,arraySize-1);
+        withShiftoperator(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_sortBound, DescDouble)
+    TEST(Quicksort_withShiftoperator, DescDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
-        sortBound(a,0,arraySize-1);
+        withShiftoperator(a);
         isSortet(a);
     }
 
-    TEST(Insertionsort_sortBound, RandomDouble)
+    TEST(Quicksort_withShiftoperator, RandomDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
-        sortBound(a,0,arraySize-1);
+        withShiftoperator(a);
         isSortet(a);
     }
+
 }

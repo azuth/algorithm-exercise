@@ -2,56 +2,56 @@
 #include <string>
 #include "quicksort.h"
 #include "../dataset/dataset.h"
-#include "../testUtils.cc"
+#include "../testUtils.h"
 
 
 namespace Quicksort{
 
-    TEST(Quicksort_withShiftoperator, AscInt)
+    TEST(Quicksort_normal, AscInt)
     {
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
-        withShiftoperator(a);
+        normal(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_withShiftoperator, DescInt)
+    TEST(Quicksort_normal, DescInt)
     {
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
-        withShiftoperator(a);
+        normal(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_withShiftoperator, RandomInt)
+    TEST(Quicksort_normal, RandomInt)
     {
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
-        withShiftoperator(a);
+        normal(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_withShiftoperator, AscDouble)
+    TEST(Quicksort_normal, AscDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
-        withShiftoperator(a);
+        normal(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_withShiftoperator, DescDouble)
+    TEST(Quicksort_normal, DescDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
-        withShiftoperator(a);
+        normal(a);
         isSortet(a);
     }
 
-    TEST(Quicksort_withShiftoperator, RandomDouble)
+    TEST(Quicksort_normal, RandomDouble)
     {
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
-        withShiftoperator(a);
+        normal(a);
         isSortet(a);
     }
 

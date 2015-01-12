@@ -2,10 +2,11 @@
 #include <string>
 #include "quicksort.h"
 #include "../dataset/dataset.h"
-#include "../testUtils.cc"
+#include "../testUtils.h"
 
 
 namespace Quicksort{
+    const size_t arraySize = 10;
 
     TEST(Quicksort_hybrid, AscInt)
     {
