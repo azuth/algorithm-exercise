@@ -12,7 +12,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
         withGuard(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuard, DescInt)
@@ -20,7 +20,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
         withGuard(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuard, RandomInt)
@@ -28,7 +28,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
         withGuard(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuard, AscDouble)
@@ -36,7 +36,7 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
         withGuard(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuard, DescDouble)
@@ -44,7 +44,7 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
         withGuard(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuard, RandomDouble)
@@ -52,6 +52,6 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
         withGuard(a);
-        isSortet(a);
+        isSorted(a);
     }
 }

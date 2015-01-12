@@ -12,7 +12,7 @@ namespace Mergesort{
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
         bottomUp(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_buttomUp, DescInt)
@@ -20,7 +20,7 @@ namespace Mergesort{
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
         bottomUp(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_buttomUp, RandomInt)
@@ -28,7 +28,7 @@ namespace Mergesort{
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
         bottomUp(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_buttomUp, AscDouble)
@@ -36,7 +36,7 @@ namespace Mergesort{
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
         bottomUp(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_buttomUp, DescDouble)
@@ -44,7 +44,7 @@ namespace Mergesort{
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
         bottomUp(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_buttomUp, RandomDouble)
@@ -52,6 +52,6 @@ namespace Mergesort{
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
         bottomUp(a);
-        isSortet(a);
+        isSorted(a);
     }
 }

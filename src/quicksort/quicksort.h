@@ -6,12 +6,6 @@
 
 namespace Quicksort{
     template <typename T, size_t SIZE>
-    void printArray(std::array<T,SIZE> &a){
-        for(size_t i = 0; i < SIZE; i++ ){
-            std::cout << a[i] << " ";
-        }
-        std::cout << std::endl;
-    }
 
     template <typename T, size_t SIZE>
     void normalSort(std::array<T,SIZE> &a, size_t leftBound, size_t rightBound){

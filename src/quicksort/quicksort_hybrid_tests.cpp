@@ -13,7 +13,7 @@ namespace Quicksort{
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
         hybrid(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_hybrid, DescInt)
@@ -21,7 +21,7 @@ namespace Quicksort{
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
         hybrid(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_hybrid, RandomInt)
@@ -29,7 +29,7 @@ namespace Quicksort{
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
         hybrid(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_hybrid, AscDouble)
@@ -37,7 +37,7 @@ namespace Quicksort{
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
         hybrid(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_hybrid, DescDouble)
@@ -45,7 +45,7 @@ namespace Quicksort{
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
         hybrid(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_hybrid, RandomDouble)
@@ -53,7 +53,7 @@ namespace Quicksort{
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
         hybrid(a);
-        isSortet(a);
+        isSorted(a);
     }
 
 }

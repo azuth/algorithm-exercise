@@ -12,7 +12,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
         sortBound(a,0,arraySize-1);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_sortBound, DescInt)
@@ -20,7 +20,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
         sortBound(a,0,arraySize-1);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_sortBound, RandomInt)
@@ -28,7 +28,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
         sortBound(a,0,arraySize-1);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_sortBound, AscDouble)
@@ -36,7 +36,7 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
         sortBound(a,0,arraySize-1);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_sortBound, DescDouble)
@@ -44,7 +44,7 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
         sortBound(a,0,arraySize-1);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_sortBound, RandomDouble)
@@ -52,6 +52,6 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
         sortBound(a,0,arraySize-1);
-        isSortet(a);
+        isSorted(a);
     }
 }

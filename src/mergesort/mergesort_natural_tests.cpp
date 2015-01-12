@@ -12,7 +12,7 @@ namespace Mergesort{
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
         natural(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_natural, DescInt)
@@ -20,7 +20,7 @@ namespace Mergesort{
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
         natural(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_natural, RandomInt)
@@ -28,7 +28,7 @@ namespace Mergesort{
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
         natural(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_natural, AscDouble)
@@ -36,7 +36,7 @@ namespace Mergesort{
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
         natural(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_natural, DescDouble)
@@ -44,7 +44,7 @@ namespace Mergesort{
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
         natural(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Mergesort_natural, RandomDouble)
@@ -52,6 +52,6 @@ namespace Mergesort{
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
         natural(a);
-        isSortet(a);
+        isSorted(a);
     }
 }

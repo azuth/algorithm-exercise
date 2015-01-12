@@ -12,7 +12,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_normal, DescInt)
@@ -20,7 +20,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_normal, RandomInt)
@@ -28,7 +28,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_normal, AscDouble)
@@ -36,7 +36,7 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_normal, DescDouble)
@@ -44,7 +44,7 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_normal, RandomDouble)
@@ -52,6 +52,6 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 }

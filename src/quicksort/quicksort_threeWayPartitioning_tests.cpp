@@ -12,7 +12,7 @@ namespace Quicksort{
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
         threeWayPartitioning(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_threeWayPartitioning, DescInt)
@@ -20,7 +20,7 @@ namespace Quicksort{
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
         threeWayPartitioning(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_threeWayPartitioning, RandomInt)
@@ -28,7 +28,7 @@ namespace Quicksort{
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
         threeWayPartitioning(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_threeWayPartitioning, AscDouble)
@@ -36,7 +36,7 @@ namespace Quicksort{
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
         threeWayPartitioning(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_threeWayPartitioning, DescDouble)
@@ -44,7 +44,7 @@ namespace Quicksort{
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
         threeWayPartitioning(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_threeWayPartitioning, RandomDouble)
@@ -52,6 +52,6 @@ namespace Quicksort{
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
         threeWayPartitioning(a);
-        isSortet(a);
+        isSorted(a);
     }
 }

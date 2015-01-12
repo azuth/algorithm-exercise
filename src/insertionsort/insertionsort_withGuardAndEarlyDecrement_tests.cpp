@@ -12,7 +12,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
         withGuardAndEarlyDecrement(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuardAndEarlyDecrement, DescInt)
@@ -20,7 +20,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
         withGuardAndEarlyDecrement(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuardAndEarlyDecrement, RandomInt)
@@ -28,7 +28,7 @@ namespace Insertionsort{
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
         withGuardAndEarlyDecrement(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuardAndEarlyDecrement, AscDouble)
@@ -36,7 +36,7 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
         withGuardAndEarlyDecrement(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuardAndEarlyDecrement, DescDouble)
@@ -44,7 +44,7 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
         withGuardAndEarlyDecrement(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Insertionsort_withGuardAndEarlyDecrement, RandomDouble)
@@ -52,6 +52,6 @@ namespace Insertionsort{
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
         withGuardAndEarlyDecrement(a);
-        isSortet(a);
+        isSorted(a);
     }
 }

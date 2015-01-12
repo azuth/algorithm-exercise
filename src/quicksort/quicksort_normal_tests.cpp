@@ -12,7 +12,7 @@ namespace Quicksort{
         std::array<int ,arraySize> a;
         Dataset::ascArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_normal, DescInt)
@@ -20,7 +20,7 @@ namespace Quicksort{
         std::array<int ,arraySize> a;
         Dataset::descArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_normal, RandomInt)
@@ -28,7 +28,7 @@ namespace Quicksort{
         std::array<int ,arraySize> a;
         Dataset::randArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_normal, AscDouble)
@@ -36,7 +36,7 @@ namespace Quicksort{
         std::array<double ,arraySize> a;
         Dataset::ascArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_normal, DescDouble)
@@ -44,7 +44,7 @@ namespace Quicksort{
         std::array<double ,arraySize> a;
         Dataset::descArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
     TEST(Quicksort_normal, RandomDouble)
@@ -52,7 +52,7 @@ namespace Quicksort{
         std::array<double ,arraySize> a;
         Dataset::randArray(a);
         normal(a);
-        isSortet(a);
+        isSorted(a);
     }
 
 }
