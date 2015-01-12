@@ -87,7 +87,7 @@ namespace Benchmark{
     }
 
     template<>
-    void benchmarkIterator<double,0>(benchmarkdataset& data){
+    void benchmarkIterator<double,0>(benchmarkdataset& /*data*/){
 
     }
 
