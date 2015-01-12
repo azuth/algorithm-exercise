@@ -69,6 +69,10 @@
 			<Option target="test Release" />
 			<Option target="test Debug" />
 		</Unit>
+		<Unit filename="src/insertionsort/Insertionsort_sortBound_tests.cc">
+			<Option target="test Debug" />
+			<Option target="test Release" />
+		</Unit>
 		<Unit filename="src/insertionsort/Insertionsort_withGuardAndEarlyDecrement_tests.cc">
 			<Option target="test Release" />
 			<Option target="test Debug" />
@@ -92,6 +96,10 @@
 			<Option target="test Release" />
 		</Unit>
 		<Unit filename="src/quicksort/quicksort.h" />
+		<Unit filename="src/quicksort/quicksort_hybrid_tests.cc">
+			<Option target="test Debug" />
+			<Option target="test Release" />
+		</Unit>
 		<Unit filename="src/quicksort/quicksort_normal_tests.cc">
 			<Option target="test Debug" />
 			<Option target="test Release" />

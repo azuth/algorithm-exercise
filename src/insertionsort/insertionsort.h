@@ -66,7 +66,7 @@ namespace Insertionsort{
                 j = i;
             }
         }
-        std::swap(a[0],a[j]);
+        std::swap(a[leftBound],a[j]);
 
         for(i = leftBound+1 ; i <= rightBound ; i++){
             T t = a[i];

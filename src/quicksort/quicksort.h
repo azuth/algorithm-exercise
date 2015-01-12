@@ -2,6 +2,7 @@
 #include <iostream>
 #include <array>
 #include "../insertionsort/insertionsort.h"
+#include "../mergesort/mergesort.h"
 
 namespace Quicksort{
     template <typename T, size_t SIZE>
@@ -91,10 +92,10 @@ namespace Quicksort{
         std::swap(a[left] , a[rightBound]);
 
         if(left != 0){
-            normalSort(a,leftBound,left-1);
+            withShiftoperatorSort(a,leftBound,left-1);
         }
 
-        normalSort(a,left+1,rightBound);
+        withShiftoperatorSort(a,left+1,rightBound);
     }
 
     template <typename T, size_t SIZE>
@@ -162,9 +163,9 @@ namespace Quicksort{
             std::swap(a[k] , a[left]);
         }
 
-        normalSort(a,leftBound,right);
+        threeWayPartitioningSort(a,leftBound,right);
 
-        normalSort(a,left,rightBound);
+        threeWayPartitioningSort(a,left,rightBound);
     }
 
     template <typename T, size_t SIZE>
