@@ -4,5 +4,3 @@
 *.save
 /build
 
-# gtest folder
-/gtest*

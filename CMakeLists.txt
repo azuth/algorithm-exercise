@@ -3,7 +3,7 @@ project (algorithm-exercise)
 cmake_minimum_required (VERSION 2.6)
 
 # GTest
-ADD_SUBDIRECTORY ("gtest")
+ADD_SUBDIRECTORY ("gtest-1.7.0")
 enable_testing()
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
