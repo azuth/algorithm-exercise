@@ -54,4 +54,28 @@ namespace Insertionsort{
         normal(a);
         isSorted(a);
     }
+
+    TEST(Insertionsort_normal, AscString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::ascArray(a);
+        normal(a);
+        isSorted(a);
+    }
+
+    TEST(Insertionsort_normal, DescString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::descArray(a);
+        normal(a);
+        isSorted(a);
+    }
+
+    TEST(Insertionsort_normal, RandomString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::randArray(a);
+        normal(a);
+        isSorted(a);
+    }
 }

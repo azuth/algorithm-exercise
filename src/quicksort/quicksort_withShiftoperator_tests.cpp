@@ -55,4 +55,27 @@ namespace Quicksort{
         isSorted(a);
     }
 
+    TEST(Quicksort_withShiftoperator, AscString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::ascArray(a);
+        withShiftoperator(a);
+        isSorted(a);
+    }
+
+    TEST(Quicksort_withShiftoperator, DescString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::descArray(a);
+        withShiftoperator(a);
+        isSorted(a);
+    }
+
+    TEST(Quicksort_withShiftoperator, RandomString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::randArray(a);
+        withShiftoperator(a);
+        isSorted(a);
+    }
 }

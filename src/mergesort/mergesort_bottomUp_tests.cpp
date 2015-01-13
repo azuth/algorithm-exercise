@@ -54,4 +54,28 @@ namespace Mergesort{
         bottomUp(a);
         isSorted(a);
     }
+
+    TEST(Mergesort_buttomUp, AscString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::ascArray(a);
+        bottomUp(a);
+        isSorted(a);
+    }
+
+    TEST(Mergesort_buttomUp, DescString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::descArray(a);
+        bottomUp(a);
+        isSorted(a);
+    }
+
+    TEST(Mergesort_buttomUp, RandomString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::randArray(a);
+        bottomUp(a);
+        isSorted(a);
+    }
 }

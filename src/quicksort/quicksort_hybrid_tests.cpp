@@ -56,4 +56,27 @@ namespace Quicksort{
         isSorted(a);
     }
 
+    TEST(Quicksort_hybrid, AscString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::ascArray(a);
+        hybrid(a);
+        isSorted(a);
+    }
+
+    TEST(Quicksort_hybrid, DescString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::descArray(a);
+        hybrid(a);
+        isSorted(a);
+    }
+
+    TEST(Quicksort_hybrid, RandomString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::randArray(a);
+        hybrid(a);
+        isSorted(a);
+    }
 }

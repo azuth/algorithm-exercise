@@ -54,4 +54,28 @@ namespace Mergesort{
         natural(a);
         isSorted(a);
     }
+
+    TEST(Mergesort_natural, AscString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::ascArray(a);
+        natural(a);
+        isSorted(a);
+    }
+
+    TEST(Mergesort_natural, DescString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::descArray(a);
+        natural(a);
+        isSorted(a);
+    }
+
+    TEST(Mergesort_natural, RandomString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::randArray(a);
+        natural(a);
+        isSorted(a);
+    }
 }

@@ -54,4 +54,29 @@ namespace Heapsort{
         normal(a);
         isSorted(a);
     }
+
+
+    TEST(Heapsort_normal, AscString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::ascArray(a);
+        normal(a);
+        isSorted(a);
+    }
+
+    TEST(Heapsort_normal, DescString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::descArray(a);
+        normal(a);
+        isSorted(a);
+    }
+
+    TEST(Heapsort_normal, RandomString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::randArray(a);
+        normal(a);
+        isSorted(a);
+    }
 }

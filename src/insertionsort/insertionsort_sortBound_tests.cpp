@@ -54,4 +54,28 @@ namespace Insertionsort{
         sortBound(a,0,arraySize-1);
         isSorted(a);
     }
+
+    TEST(Insertionsort_sortBound, AscString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::ascArray(a);
+        sortBound(a,0,arraySize-1);
+        isSorted(a);
+    }
+
+    TEST(Insertionsort_sortBound, DescString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::descArray(a);
+        sortBound(a,0,arraySize-1);
+        isSorted(a);
+    }
+
+    TEST(Insertionsort_sortBound, RandomString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::randArray(a);
+        sortBound(a,0,arraySize-1);
+        isSorted(a);
+    }
 }

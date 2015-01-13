@@ -54,4 +54,28 @@ namespace Quicksort{
         threeWayPartitioning(a);
         isSorted(a);
     }
+
+    TEST(Quicksort_threeWayPartitioning, AscString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::ascArray(a);
+        threeWayPartitioning(a);
+        isSorted(a);
+    }
+
+    TEST(Quicksort_threeWayPartitioning, DescString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::descArray(a);
+        threeWayPartitioning(a);
+        isSorted(a);
+    }
+
+    TEST(Quicksort_threeWayPartitioning, RandomString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::randArray(a);
+        threeWayPartitioning(a);
+        isSorted(a);
+    }
 }

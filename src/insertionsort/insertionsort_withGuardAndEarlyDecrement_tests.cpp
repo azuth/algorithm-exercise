@@ -54,4 +54,28 @@ namespace Insertionsort{
         withGuardAndEarlyDecrement(a);
         isSorted(a);
     }
+
+    TEST(Insertionsort_withGuardAndEarlyDecrement, AscString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::ascArray(a);
+        withGuardAndEarlyDecrement(a);
+        isSorted(a);
+    }
+
+    TEST(Insertionsort_withGuardAndEarlyDecrement, DescString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::descArray(a);
+        withGuardAndEarlyDecrement(a);
+        isSorted(a);
+    }
+
+    TEST(Insertionsort_withGuardAndEarlyDecrement, RandomString)
+    {
+        std::array<std::string ,arraySize> a;
+        Dataset::randArray(a);
+        withGuardAndEarlyDecrement(a);
+        isSorted(a);
+    }
 }
