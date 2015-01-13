@@ -25,10 +25,14 @@ list(APPEND SRC_BENCHMARK
 	benchmark/benchmark.h
 )
 
+list(APPEND SRC_DATASET
+	dataset/dataset.h
+)
+
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-add_executable(${PROJECT_NAME}_benchmark ${SRC_SORTALGORITHMS} ${SRC_BENCHMARK})
+add_executable(${PROJECT_NAME}_benchmark ${SRC_SORTALGORITHMS} ${SRC_DATASET} ${SRC_BENCHMARK})
 
 
-add_executable(${PROJECT_NAME}_tests ${SRC_SORTALGORITHMS} ${SRC_TESTS})
+add_executable(${PROJECT_NAME}_tests ${SRC_SORTALGORITHMS} ${SRC_DATASET} ${SRC_TESTS})
 target_link_libraries (${PROJECT_NAME}_tests gtest gtest_main)
