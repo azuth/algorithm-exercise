@@ -20,12 +20,19 @@ namespace Benchmark{
             benchmarkdata asc,desc,rand;
     };
 
+    void clearCach(){
+        const size_t S = 10240000;
+        auto a = new std::array<double, S>;
+        Dataset::randArray(*a);
+        delete a;
+    }
+
     template <typename T, size_t S>
     std::chrono::milliseconds stoptime(std::function<void(std::array<T,S>&)> f, std::array<T,S> &a)
     {
         std::chrono::time_point<std::chrono::system_clock> start, end;
 
-        // fehlt -> mit zufallszahlen überschreiben
+        clearCach();
 
         start = std::chrono::system_clock::now();
         f(a);
