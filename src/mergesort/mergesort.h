@@ -38,7 +38,7 @@ namespace Mergesort{
 
     template <typename T, size_t SIZE>
     void bottomUp(std::array<T,SIZE> &a){
-        auto temp = std::make_shared<std::array<T,SIZE>>(); // std::array<T,SIZE>  temp;
+        auto temp = std::make_shared<std::array<T,SIZE>>();
         for(size_t width = 1 ; width < SIZE ; width = width << 1){
             for(size_t left = 0 ; left < SIZE ; left += width << 1){
                 merge(a,*temp.get(), left, std::min(left+width,SIZE) , std::min(left+(width << 1),SIZE));
@@ -50,7 +50,7 @@ namespace Mergesort{
 
     template <typename T, size_t SIZE>
     void natural(std::array<T,SIZE> &a){
-        auto temp = std::make_shared<std::array<T,SIZE>>(); // std::array<T,SIZE>  temp;
+        auto temp = std::make_shared<std::array<T,SIZE>>();
 
         size_t left = 0;
         size_t end = SIZE-1;

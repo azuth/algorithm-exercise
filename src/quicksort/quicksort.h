@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include <array>
 #include "../insertionsort/insertionsort.h"
 #include "../mergesort/mergesort.h"

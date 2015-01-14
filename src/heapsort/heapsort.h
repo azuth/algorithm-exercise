@@ -6,20 +6,18 @@ namespace Heapsort{
     template <typename T, size_t SIZE>
     void downheap(std::array<T,SIZE> &a , size_t n , size_t v)
     {
-        size_t w = (2*v)+1;         // erster Nachfolger von v
+        size_t w = (2*v)+1;
         while ( w < n )
         {
-            if( w+1 < n )       // gibt es einen zweiten Nachfolger?
+            if( w+1 < n )
                 if( a[w+1] > a[w] )
                     w++;
-            // w ist der Nachfolger von v mit maximaler Markierung
 
             if( a[v] >= a[w] )
-                return;  // v hat die Heap-Eigenschaft
+                return;
 
-            // sonst
-            std::swap(a[v],a[w]);  // vertausche Markierungen von v und w
-            v = w;             // fahre mit v=w fort
+            std::swap(a[v],a[w]);
+            v = w;
             w = (2*v)+1;
         }
     }
