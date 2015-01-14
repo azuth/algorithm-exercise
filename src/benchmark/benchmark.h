@@ -51,6 +51,7 @@ namespace Benchmark{
                 {"Quicksort",Quicksort::normal<T,S>},
                 {"Quicksort with Shiftoperator",Quicksort::withShiftoperator<T,S>},
                 {"Quicksort three way partitioning",Quicksort::threeWayPartitioning<T,S>},
+                {"Quicksort three way partitioning hybrid",Quicksort::hybrid<T,S>},
                 {"Heapsort",Heapsort::normal<T,S>}
         };
 
@@ -125,7 +126,7 @@ namespace Benchmark{
     }
 
     void benchmark(){
-        const size_t iterations = 9;
+        const size_t iterations = 11;
         benchmarkdataset data;
         benchmarkIterator<double,iterations>(data);
         makeCVS(data,iterations);
