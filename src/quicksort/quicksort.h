@@ -37,6 +37,8 @@ namespace Quicksort{
         }
         std::swap(a[left] , a[rightBound]);
 
+
+
         if(left != 0){
             normalSort(a,leftBound,left-1);
         }
@@ -116,7 +118,6 @@ namespace Quicksort{
         T pivot = a[middle];
         std::swap(a[middle] , a[rightBound]);
 
-
         while(true){
             while( a[++left] < pivot ){
                 ;
@@ -148,14 +149,13 @@ namespace Quicksort{
         left = left +1;
 
         int k;
-        for(k = leftBound ; k < pLeft ; k++,right--){
+        for(k = leftBound ; k <= pLeft ; k++,right--){
             std::swap(a[k] , a[right]);
         }
 
         for(k = rightBound-1 ; k > pRight ; k--, left++){
             std::swap(a[k] , a[left]);
         }
-
         threeWayPartitioningSort(a,leftBound,right);
 
         threeWayPartitioningSort(a,left,rightBound);
@@ -222,7 +222,7 @@ namespace Quicksort{
         left = left +1;
 
         int k;
-        for(k = leftBound ; k < pLeft ; k++,right--){
+        for(k = leftBound ; k <= pLeft ; k++,right--){
             std::swap(a[k] , a[right]);
         }
 
