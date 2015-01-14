@@ -74,11 +74,17 @@ namespace Benchmark{
         for(auto &arr :  arrays){
             //std::cout << "Array Type: " << arr.first <<  std:: endl;
             for(auto sf : sfv){
-                auto cp = new std::array<T, S>(arr.first);
-                auto time = stoptime(sf.second,*cp);
-                std::cout << "    " << sf.first  << ": " << time.count() << std::endl;
-                arr.second[sf.first].push_back(time);
-                delete cp;
+                if(!((sf.first == "Insertionsort" ||
+                   sf.first == "Insertionsort with Guard" ||
+                   sf.first == "Insertionsort with Guard And Early Decrement") && S > 640000)
+
+                ){
+                    auto cp = new std::array<T, S>(arr.first);
+                    auto time = stoptime(sf.second,*cp);
+                    std::cout << "    " << sf.first  << ": " << time.count() << std::endl;
+                    arr.second[sf.first].push_back(time);
+                    delete cp;
+                }
             }
         }
         std::cout << "-----------------------" << std::endl;
