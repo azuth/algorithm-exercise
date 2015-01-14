@@ -20,7 +20,7 @@ namespace Benchmark{
             benchmarkdata asc,desc,rand;
     };
 
-    void clearCach(){
+    void clearCache(){
         const size_t S = 10240000;
         auto a = new std::array<double, S>;
         Dataset::randArray(*a);
@@ -32,7 +32,7 @@ namespace Benchmark{
     {
         std::chrono::time_point<std::chrono::system_clock> start, end;
 
-        clearCach();
+        clearCache();
 
         start = std::chrono::system_clock::now();
         f(a);
