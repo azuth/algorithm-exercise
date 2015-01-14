@@ -66,13 +66,13 @@ namespace Dataset{
         std::random_device rd;
         std::mt19937 gen(rd());
         std:: uniform_int_distribution<> randChar(0,charset.size()-1);
-        std:: uniform_int_distribution<> randWordlenght(0,25);
+        std:: uniform_int_distribution<> randWordlength(0,25);
 
         for(size_t i =0; i < SIZE; i++){
-            auto wordlenght = randWordlenght(gen);
+            size_t wordlength = randWordlength(gen);
             std::string s;
-            s.reserve(wordlenght);
-            for(size_t j= 0; j < wordlenght; j++){
+            s.reserve(wordlength);
+            for(size_t j= 0; j < wordlength; j++){
                 s.push_back(charset.at(randChar(gen)));
             }
             a[i] = s;
