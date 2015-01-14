@@ -230,7 +230,7 @@ namespace Quicksort{
             std::swap(a[k] , a[left]);
         }
 
-        if((right-leftBound)*3 < rightBound-left || right-leftBound > (rightBound-left)*3){
+        if((right-leftBound)*6 < rightBound-left || right-leftBound > (rightBound-left)*6){
             hybridSort(a,leftBound,middle);
 
             hybridSort(a,middle,rightBound);
