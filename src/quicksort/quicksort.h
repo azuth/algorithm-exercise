@@ -169,7 +169,7 @@ namespace Quicksort{
     }
 
     template <typename T, size_t SIZE>
-    void hybridSort(std::array<T,SIZE> &a, int leftBound, int rightBound){
+    void hybridSort(std::array<T,SIZE> &a, std::array<T,SIZE> &temp, int leftBound, int rightBound){
         if(rightBound <= leftBound){
             return;
         }
@@ -230,17 +230,17 @@ namespace Quicksort{
         }
 
         if((right-leftBound)*6 < rightBound-left || right-leftBound > (rightBound-left)*6){
-            hybridSort(a,leftBound,middle);
+            hybridSort(a,temp,leftBound,middle);
 
-            hybridSort(a,middle,rightBound);
+            hybridSort(a,temp,middle,rightBound);
 
-            auto temp = std::make_shared<std::array<T, SIZE>>();
-            Mergesort::merge(a,*temp.get(),leftBound,middle,rightBound);
+            
+            Mergesort::merge(a,temp,leftBound,middle,rightBound);
         }
         else{
-            hybridSort(a,leftBound,right);
+            hybridSort(a,temp,leftBound,right);
 
-            hybridSort(a,left,rightBound);
+            hybridSort(a,temp,left,rightBound);
         }
     }
 
@@ -249,7 +249,8 @@ namespace Quicksort{
         if (SIZE <= 1){
             return;
         }
-        hybridSort(a, 0, SIZE-1);
+        auto temp = std::make_shared<std::array<T, SIZE>>();
+        hybridSort(a,*temp.get(), 0, SIZE-1);
     }
 }
 
